@@ -37,3 +37,5 @@ jobs:
       - name: Push Docker image
         run: |
           docker push 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+
+# trigger: 2026-02-26T20:10:17
