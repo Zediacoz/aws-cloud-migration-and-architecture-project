@@ -20,28 +20,28 @@ locals {
 
 # Required subnet tags so Kubernetes can discover subnets for LoadBalancers later.
 resource "aws_ec2_tag" "public_subnet_cluster" {
-  for_each    = toset(var.public_subnet_ids)
+  for_each    = toset(data.terraform_remote_state.network.outputs.public_subnet_ids)
   resource_id = each.value
   key         = "kubernetes.io/cluster/${var.cluster_name}"
   value       = "shared"
 }
 
 resource "aws_ec2_tag" "public_subnet_role" {
-  for_each    = toset(var.public_subnet_ids)
+  for_each    = toset(data.terraform_remote_state.network.outputs.public_subnet_ids)
   resource_id = each.value
   key         = "kubernetes.io/role/elb"
   value       = "1"
 }
 
 resource "aws_ec2_tag" "private_subnet_cluster" {
-  for_each    = toset(var.private_subnet_ids)
+  for_each    = toset(data.terraform_remote_state.network.outputs.private_subnet_ids)
   resource_id = each.value
   key         = "kubernetes.io/cluster/${var.cluster_name}"
   value       = "shared"
 }
 
 resource "aws_ec2_tag" "private_subnet_role" {
-  for_each    = toset(var.private_subnet_ids)
+  for_each    = toset(data.terraform_remote_state.network.outputs.private_subnet_ids)
   resource_id = each.value
   key         = "kubernetes.io/role/internal-elb"
   value       = "1"
@@ -54,8 +54,8 @@ module "eks" {
   cluster_name    = var.cluster_name
   cluster_version = "1.29"
 
-  vpc_id     = var.vpc_id
-  subnet_ids = var.private_subnet_ids
+  vpc_id     = data.terraform_remote_state.network.outputs.vpc_id
+  subnet_ids = data.terraform_remote_state.network.outputs.private_subnet_ids
 
   cluster_endpoint_public_access           = true
   enable_cluster_creator_admin_permissions = true
