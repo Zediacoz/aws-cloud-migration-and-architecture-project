@@ -11,6 +11,7 @@ permissions:
 env:
   AWS_REGION: eu-west-2
   ECR_REPOSITORY: devops-eks-app
+  IMAGE_TAG: ${{ github.sha }}
 
 jobs:
   build-and-push:
@@ -33,9 +34,9 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t $ECR_REPOSITORY:latest -f 06-containerization-docker/Dockerfile 06-containerization-docker
-          docker tag $ECR_REPOSITORY:latest 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
-          docker tag $ECR_REPOSITORY:latest 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:${{ env.SHORT_SHA }}
+          docker build -t $ECR_REPOSITORY:$IMAGE_TAG -f 06-containerization-docker/Dockerfile 06-containerization-docker
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
 
       - name: Push Docker image
         run: |
