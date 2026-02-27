@@ -37,10 +37,12 @@ jobs:
           docker build -t $ECR_REPOSITORY:$IMAGE_TAG -f 06-containerization-docker/Dockerfile 06-containerization-docker
           docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
           docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
+          docker tag $ECR_REPOSITORY:$IMAGE_TAG 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:${{ env.SHORT_SHA }}
 
       - name: Push Docker image
         run: |
           docker push 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:latest
+          docker push 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:$IMAGE_TAG
           docker push 225334088200.dkr.ecr.${{ env.AWS_REGION }}.amazonaws.com/$ECR_REPOSITORY:${{ env.SHORT_SHA }}
 
 # trigger: 2026-02-26T20:10:17
