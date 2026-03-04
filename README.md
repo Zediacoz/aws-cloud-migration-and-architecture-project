@@ -1,4 +1,4 @@
-# aws-cloud-migration-and-architecture-project
+# Production-Style Kubernetes Platform on AWS (Terraform + GitOps + Observability)
 
 This project simulates a real-world DevOps platform build for a mid-size SaaS company migrating a core service to AWS EKS. 
 It focuses on infrastructure as code, automated delivery, production-grade observability, and cost efficiency. 
