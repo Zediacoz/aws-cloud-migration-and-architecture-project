@@ -11,12 +11,14 @@ The repository is structured to reflect a realistic platform engineering workflo
 
 The goal of this project is to demonstrate practical DevOps engineering skills across the full platform lifecycle: designing infrastructure, deploying and operating services in a cloud-native environment, implementing CI/CD automation, and maintaining operational reliability through monitoring and documented incident response.
 
-\##Architecture
+\## Architecture
+
 
 !\[Platform Architecture](docs/images/Architecture\_Diagram.png)
 
 
-\##Technilogies Used
+
+\## Technilogies Used
 
 
 
@@ -28,6 +30,7 @@ ArgoCD
 Prometheus
 Grafana
 GitHub Actions
+
 
 
 ## Infrastructure Flow
