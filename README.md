@@ -1,12 +1,12 @@
 # Production-Style Kubernetes Platform on AWS (Terraform + GitOps + Observability)
 
+#Overview
+This project demonstrates the design, deployment, and operation of a production-style Kubernetes platform on AWS using Infrastructure as Code, GitOps, CI/CD, and observability tooling.
 
-This project demonstrates the design and operation of a production-style Kubernetes platform on AWS using Infrastructure as Code, GitOps, and full observability.
+The platform infrastructure is provisioned with Terraform and deploys a Kubernetes cluster on Amazon EKS. Applications are containerized with Docker, built and pushed to Amazon ECR through a GitHub Actions CI pipeline, and deployed to the cluster using ArgoCD following a GitOps workflow.
 
-The platform provisions AWS infrastructure with Terraform, deploys applications through ArgoCD GitOps workflows, and provides cluster observability using Prometheus and Grafana. 
+Platform observability is provided through Prometheus and Grafana, enabling monitoring of cluster workloads and infrastructure metrics. Alerting and operational runbooks are included to simulate real-world incident response and on-call procedures.
 
-The platform is built using Terraform to provision cloud infrastructure, Kubernetes for workload orchestration, and CI/CD pipelines to enable repeatable, low-risk deployments. 
-Prometheus and Grafana provide monitoring and alerting, supported by runbooks and incident documentation that reflect real on-call operations. Cost efficiency is treated as a first-class concern, with autoscaling, right-sized resource requests, and documented cost guardrails designed to reduce waste while maintaining reliability. 
+The repository is structured to reflect a realistic platform engineering workflow, including infrastructure provisioning, container build automation, GitOps-based deployments, monitoring, alerting, and operational documentation.
 
-The goal of this project is to demonstrate hands-on DevOps engineering skills across the full lifecycle: designing infrastructure, 
-deploying and operating services in production-like environments, responding to incidents, and continuously improving reliability and cost efficiency.
+The goal of this project is to demonstrate practical DevOps engineering skills across the full platform lifecycle: designing infrastructure, deploying and operating services in a cloud-native environment, implementing CI/CD automation, and maintaining operational reliability through monitoring and documented incident response.
