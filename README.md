@@ -80,6 +80,7 @@ When the full environment is running, the main cost drivers are:
 - EBS volumes and data transfer: ~ $0.08–$0.10 per GB per month
 
 Costs depend on runtime, traffic and node sizing, so the total spend will vary. 
+
 **To minimize unnecessary charges, the infrastructure can be destroyed when not in use by running `terraform destroy`.**
 
 ## Future Improvements
