@@ -49,7 +49,27 @@ The goal of this project is to demonstrate practical DevOps engineering skills a
 
 ## CI/CD Pipeline
 
+The project uses GitHub Actions to automate container image builds and deployment updates.
+
+Workflow:
+
+1. Code changes are pushed to the GitHub repository.
+2. GitHub Actions builds a Docker image.
+3. The image is pushed to Amazon ECR.
+4. ArgoCD detects changes in the repository and synchronizes the Kubernetes cluster.
+5. The application is deployed automatically to the EKS cluster.
+
+This approach follows a GitOps model where the desired cluster state is stored in Git and continuously reconciled by ArgoCD.
+
 ## Monitoring
+
+The project includes a monitoring stack using Prometheus and Grafana.
+
+Prometheus collects metrics from Kubernetes components and workloads, enabling visibility into cluster health and resource usage.
+
+Grafana connects to Prometheus as a data source and provides dashboards for visualizing system and application metrics.
+
+This setup provides clear visibility into cluster health, resource usage, and application performance, and allows alerting to be easily introduced in the future using Prometheus Alertmanager.
 
 
 ## Runbooks
