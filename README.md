@@ -21,9 +21,6 @@ The goal of this project is to demonstrate practical DevOps engineering skills a
 
 ## Technologies Used
 
-<details>
-<summary>Click to expand</summary>
-
 - AWS
 - Terraform
 - Kubernetes (EKS)
@@ -32,10 +29,6 @@ The goal of this project is to demonstrate practical DevOps engineering skills a
 - Prometheus
 - Grafana
 - GitHub Actions
-
-</details>
-
-
 
 ## Infrastructure Flow
 
