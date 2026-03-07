@@ -81,7 +81,7 @@ When the full environment is running, the main cost drivers are:
 
 Costs depend on runtime, traffic and node sizing, so the total spend will vary. 
 
-**To minimize unnecessary charges, the infrastructure can be destroyed when not in use by running `terraform destroy`.**
+**To minimize unnecessary charges, the infrastructure can be destroyed when not in use by running `terraform destroy`. After destruction, any leftover resources such as ECR images, state storage, or orphaned AWS networking dependencies should also be reviewed and cleaned up if no longer needed.**
 
 ## Future Improvements
 
