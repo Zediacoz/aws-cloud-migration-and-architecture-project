@@ -16,7 +16,57 @@ The goal of the project is to demonstrate practical DevOps engineering skills ac
   <img src="docs/images/Architecture_Diagram.png" alt="Platform Architecture" width="1000">
 </p>
 
+## Deployment Verification
 
+The platform was deployed and validated to confirm that the CI/CD pipeline, GitOps workflow, Kubernetes cluster, and observability stack were functioning correctly.
+
+### CI Pipeline – Docker Build and Push
+
+The GitHub Actions pipeline successfully builds the Docker image and pushes it to Amazon ECR.
+
+<p align="center">
+  <img src="docs/screenshots/ci/Docker_Build_and_Push_Working.png" width="900">
+</p>
+
+---
+
+### GitOps Deployment – ArgoCD Application
+
+ArgoCD continuously monitors the repository and synchronizes the Kubernetes cluster with the desired state defined in Git.
+
+<p align="center">
+  <img src="docs/screenshots/argocd/ArgoCD_devops-app.png" width="900">
+</p>
+
+---
+
+### Kubernetes Cluster Health
+
+The Kubernetes cluster was verified using `kubectl` to ensure nodes and workloads were running successfully.
+
+<p align="center">
+  <img src="docs/screenshots/kubectl/Kubectl_get_pods_get_nodes.png" width="900">
+</p>
+
+---
+
+### Prometheus Metrics Collection
+
+Prometheus successfully scraped configured targets, confirming that metrics were being collected from the Kubernetes cluster and workloads.
+
+<p align="center">
+  <img src="docs/screenshots/prometheus/Prometheus_TargetsUP_1.png" width="900">
+</p>
+
+---
+
+### Grafana Observability Dashboard
+
+Grafana dashboards visualize metrics collected by Prometheus, providing insight into resource usage and workload performance.
+
+<p align="center">
+  <img src="docs/screenshots/grafana/Dashboard_Kubernetes_ComputeResources_Pod.png" width="900">
+</p>
 
 ## Technologies Used
 
