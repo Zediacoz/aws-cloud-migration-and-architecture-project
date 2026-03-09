@@ -68,6 +68,18 @@ Grafana dashboards visualize metrics collected by Prometheus, providing insight 
   <img src="docs/screenshots/grafana/Dashboard_Kubernetes_ComputeResources_Pod.png" width="1000">
 </p>
 
+## Repository Structure
+
+01-networking-vpc-dns/          Terraform networking module  
+02-kubernetes-platform-eks/     EKS cluster provisioning  
+03-containerization-docker/     Dockerfile and application containerization  
+04-gitops-argocd/               Kubernetes manifests for ArgoCD  
+05-observability-monitoring/    Prometheus and Grafana configuration  
+06-alerting-incident-response/  Monitoring and alerting setup  
+07-runbooks/                    Troubleshooting documentation  
+
+docs/                           Architecture diagram and validation screenshots
+
 ## Technologies Used
 
 - AWS
