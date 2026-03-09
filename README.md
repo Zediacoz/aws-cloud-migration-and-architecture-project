@@ -66,6 +66,13 @@ This setup provides clear visibility into cluster health, resource usage, and ap
 
 ## Runbooks
 
+Runbooks for diagnosing and resolving common Kubernetes incidents/issues in this project:
+- Pod CrashLoopBackOff
+- Pod Pending / Scheduling failures
+- ImagePullBackOff
+- Service unavailable
+- High CPU or memory usage
+- ArgoCD sync failures
 ## Cost Estimate
 
 This project was designed as a learning-focused DevOps platform, so costs were kept in mind during deployment and testing.
