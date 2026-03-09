@@ -25,7 +25,7 @@ The platform was deployed and validated to confirm that the CI/CD pipeline, GitO
 The GitHub Actions pipeline successfully builds the Docker image and pushes it to Amazon ECR.
 
 <p align="center">
-  <img src="docs/screenshots/ci/Docker_Build_and_Push_Working.png" width="900">
+  <img src="docs/screenshots/docker/Docker_Build_and_Push_Working.png" width="900">
 </p>
 
 ---
